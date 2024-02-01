@@ -68,7 +68,7 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <form method="post" action="{% url 'comparto:dfadmin' %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'comparto:admin' %}" enctype="multipart/form-data">
   {% csrf_token %}
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
@@ -409,75 +409,6 @@
                           <td><input type="text" value="{{ i.contact9 }}" name="contact9"></td>
                         </tr>
                       
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Contact Section</h4>
-                  <p class="card-description">
-                     <code>.change-content</code>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                      
-                        <tr>
-                          <th>Stored Data</th>
-                          <th></th><th></th>
-                          <th>Add your own contents.</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="py-1">{{ i.contact1 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact1 }}" name="contact1"></td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">{{ i.contact2 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact2 }}" name="contact2"></td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">{{ i.contact3 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact3 }}" name="contact3"></td>
-                        </tr><tr>
-                          <td class="py-1">{{ i.contact4 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact4 }}" name="contact4"></td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">{{ i.contact5 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact5 }}" name="contact5"></td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">{{ i.contact6 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact6 }}" name="contact6"></td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">{{ i.contact7 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact7 }}" name="contact7"></td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">{{ i.contact8 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact8 }}" name="contact8"></td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">{{ i.contact9 }}</td>
-                          <td></td><td></td>
-                          <td><input type="text" value="{{ i.contact9 }}" name="contact9"></td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>

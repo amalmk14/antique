@@ -6,7 +6,7 @@ def home(request):
     antique = Antique.objects.all()
     return render(request,'index.html',{'antique':antique})
 
-def dfadmin(request):
+def admin(request):
     antique = Antique.objects.all()
     if request.method == 'POST':
         nav1 = request.POST['nav1']
@@ -64,5 +64,12 @@ def dfadmin(request):
         footer1 = request.POST['footer1']
         footer2 = request.POST['footer2']
         footer3 = request.POST['footer3']
+
+        Antique.objects.all().update(nav1=nav1,nav2=nav2,nav3=nav3,nav4=nav4,intro1=intro1,intro2=intro2,intro3=intro3,intro4=intro4,intro5=intro5,
+                                     menu_head=menu_head,menu_img1_1=menu_img1_1,menu_img1_2=menu_img1_2,menu_img1_3=menu_img1_3,
+                                     menu_img2_1=menu_img2_1,menu_img2_2=menu_img2_2,menu_img2_3=menu_img2_3,menu_img3_1=menu_img3_1,menu_img3_2=menu_img3_2,menu_img3_3=menu_img3_3,
+                                     menu_img4_1=menu_img4_1,menu_img4_2=menu_img4_2,menu_img4_3=menu_img4_3,menu_img5_1=menu_img5_1,menu_img5_2=menu_img5_2,menu_img5_3=menu_img5_3,
+                                     menu_img6_1=menu_img6_1,menu_img6_2=menu_img6_2,menu_img6_3=menu_img6_3,menu_img7_1=menu_img7_1,menu_img7_2=menu_img7_2,menu_img7_3=menu_img7_3,
+                                     menu_img8_1=menu_img8_1,menu_img8_2=menu_img8_2,menu_img8_3=menu_img8_3)
         
     return render(request,'basictable.html',{'antique':antique})
