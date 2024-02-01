@@ -1,0 +1,713 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Recontact Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" href="{% static 'admin/vendorsmdi/css/materialdesignicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/vendorsfeather/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/vendorsbase/vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'admin/css/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'images/favicon.png.url' %}" />
+  <style>
+    input{
+          padding:20px;
+          width:700px;
+          }
+  </style>
+</head>
+
+<body>
+
+  {% for i in antique %}
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="background: #FF416C;background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);background: linear-gradient(to right, #FF4B2B, #FF416C);background-repeat: no-repeat;">
+<!--        <a class="navbar-brand brand-logo" href=""><img src="{% static 'images/logo.svg.url' %}" alt="logo"/></a>-->
+        <a class="navbar-brand brand-logo" href="{% url 'comparto:home' %}"><h4 style="color:white;">Back to Website</h4></a>
+<!--        <a class="navbar-brand brand-logo-mini" href=""><img src="{%static 'images/logo-mini.svg.url' %}" alt="logo"/></a>-->
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+      </div>
+    </nav>
+    <!-- partial -->
+
+    <div class="container-fluid page-body-wrapper">
+      
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background: #FF416C;background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);background: linear-gradient(to right, #FF4B2B, #FF416C);background-repeat: no-repeat;">
+        <div class="user-profile">
+          <div class="user-image">
+            <img src="../../images/faces/face28.png">
+          </div>
+          <div class="user-name">
+<!--              Edward Spencer-->
+          </div>
+          <div class="user-designation">
+<!--              Developer-->
+          </div>
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="icon-command menu-icon"></i>
+<!--              <span class="menu-title">Tables</span>-->
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <form method="post" action="{% url 'comparto:dfadmin' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Top Section</h4>
+                  <p class="card-description">
+                    Navbar <code>.change-content</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      
+                        <tr>
+                          <th>Stored Data</th>
+                          <th></th><th></th><th></th>
+                          <th>Add your own contents.</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-1">{{ i.nav1 }}</td>
+                          <td></td><td></td><td></td>
+                          <td><input type="text" value="{{ i.nav1 }}" name="nav1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.nav2 }}</td>
+                          <td></td><td></td><td></td>
+                          <td><input type="text" value="{{ i.nav2 }}" name="nav2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.nav3 }}</td>
+                          <td></td><td></td><td></td>
+                          <td><input type="text" value="{{ i.nav3 }}" name="nav3"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.nav4 }}</td>
+                          <td></td><td></td><td></td>
+                          <td><input type="text" value="{{ i.nav4 }}" name="nav4"></td>
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Intro Section</h4>
+                  <p class="card-description">
+                    <code>.change-content</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      
+                        <tr>
+                          <th>Stored Data</th>
+                          <th></th><th></th>
+                          <th>Add your own contents.</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-1">{{ i.intro1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.intro1 }}" name="intro1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.intro2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.intro2 }}" name="intro2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.intro3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.intro3 }}" name="intro3"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.intro4 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.intro4 }}" name="intro4"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.intro5 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.intro5 }}" name="intro5"></td>
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Menu Section</h4>
+                  <p class="card-description">
+                     <code>.change-content</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      
+                        <tr>
+                          <th>Stored Data</th>
+                          <th></th><th></th>
+                          <th>Add your own contents.</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-1">{{ i.menu_head }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_head }}" name="menu_head"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img1_1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img1_1 }}" name="menu_img1_1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img1_2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img1_2 }}" name="menu_img1_2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img1_3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img1_3 }}" name="menu_img1_3"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img2_1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img2_1 }}" name="menu_img2_1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img2_2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img2_2 }}" name="menu_img2_2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img3_1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img3_1 }}" name="menu_img3_1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img3_2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img3_2 }}" name="menu_img3_2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img4_1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img4_1 }}" name="menu_img4_1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img4_2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img4_2 }}" name="menu_img4_2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img4_3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img4_3 }}" name="menu_img4_3"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img5_1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img5_1 }}" name="menu_img5_1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img5_2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img5_2 }}" name="menu_img5_2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img6_2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img6_2 }}" name="menu_img6_2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img7_1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img7_1 }}" name="menu_img7_1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img7_2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img7_2 }}" name="menu_img7_2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img7_3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img7_3 }}" name="menu_img7_3"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img8_1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img8_1 }}" name="menu_img8_1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img8_2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img8_2 }}" name="menu_img8_2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.menu_img8_3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.menu_img8_3 }}" name="menu_img8_3"></td>
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">About Section</h4>
+                  <p class="card-description">
+                    <code>.change-content</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      
+                        <tr>
+                          <th>Stored Data</th>
+                          <th></th><th></th>
+                          <th>Add your own contents.</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-1">{{ i.about1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.about1 }}" name="about1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.about2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.about2 }}" name="about2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.about3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.about3 }}" name="about3"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.about4 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.about4 }}" name="about4"></td>
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Contact Section</h4>
+                  <p class="card-description">
+                     <code>.change-content</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      
+                        <tr>
+                          <th>Stored Data</th>
+                          <th></th><th></th>
+                          <th>Add your own contents.</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-1">{{ i.contact1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact1 }}" name="contact1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact2 }}" name="contact2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact3 }}" name="contact3"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact4 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact4 }}" name="contact4"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact5 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact5 }}" name="contact5"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact6 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact6 }}" name="contact6"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact7 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact7 }}" name="contact7"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact8 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact8 }}" name="contact8"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact9 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact9 }}" name="contact9"></td>
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Contact Section</h4>
+                  <p class="card-description">
+                     <code>.change-content</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      
+                        <tr>
+                          <th>Stored Data</th>
+                          <th></th><th></th>
+                          <th>Add your own contents.</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-1">{{ i.contact1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact1 }}" name="contact1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact2 }}" name="contact2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact3 }}" name="contact3"></td>
+                        </tr><tr>
+                          <td class="py-1">{{ i.contact4 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact4 }}" name="contact4"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact5 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact5 }}" name="contact5"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact6 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact6 }}" name="contact6"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact7 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact7 }}" name="contact7"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact8 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact8 }}" name="contact8"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.contact9 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.contact9 }}" name="contact9"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Footer Section</h4>
+                  <p class="card-description">
+                    <code>.change-content</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Stored Data</th>
+                          <th></th><th></th>
+                          <th>Add your own contents.</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-1">{{ i.footer1 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.footer1 }}" name="footer1"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.footer2 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.footer2 }}" name="footer2"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">{{ i.footer3 }}</td>
+                          <td></td><td></td>
+                          <td><input type="text" value="{{ i.footer3 }}" name="footer3"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <button type="submit" class="btn btn-info font-weight-bold" style="width:100%;margin-bottom:30px;">Save all content</button>
+            </form>
+
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Image Section</h4>
+                  <p class="card-description">
+                    <code>.change-Images</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Stored Data</th>
+                          <th></th><th></th>
+                          <th>Add your Image</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <form method="post" action="{% url 'comparto:aboutimg' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.about_img.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file"  name="about_img"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:serviceimg' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.service_img.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.service_img.url }}" name="service_img"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg1' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img1.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img1.url }}" name="contact_img1"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg2' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img2.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img2.url }}" name="contact_img2"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg3' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img3.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img3.url }}" name="contact_img3"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg4' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img4.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img4.url }}" name="contact_img4"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg5' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img5.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img5.url }}" name="contact_img5"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg6' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img6.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img6.url }}" name="contact_img6"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg7' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img7.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img7.url }}" name="contact_img7"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg8' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img8.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img8.url }}" name="contact_img8"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg9' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img9.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img9.url }}" name="contact_img9"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'comparto:contactimg10' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.contact_img10.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.contact_img10.url }}" name="contact_img10"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  {% endfor %}
+
+<script>
+function previewImage() {
+    var input = document.getElementById('inputServiceImg');
+    var preview = document.getElementById('previewImage');
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        preview.src = '{% if i.service_img %}{{ i.service_img.url }}{% endif %}';
+    }
+}
+</script>
+  <!-- container-scroller -->
+  <!-- base:js -->
+  <script src="{% static 'admin/vendorsbase/vendor.bundle.base.js' %}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="{% static 'admin/js/off-canvas.js' %}"></script>
+  <script src="{% static 'admin/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'admin/js/template.js' %}"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
