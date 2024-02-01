@@ -32,7 +32,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="background: #FF416C;background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);background: linear-gradient(to right, #FF4B2B, #FF416C);background-repeat: no-repeat;">
 <!--        <a class="navbar-brand brand-logo" href=""><img src="{% static 'images/logo.svg.url' %}" alt="logo"/></a>-->
-        <a class="navbar-brand brand-logo" href="{% url 'comparto:home' %}"><h4 style="color:white;">Back to Website</h4></a>
+        <a class="navbar-brand brand-logo" href="{% url 'app:home' %}"><h4 style="color:white;">Back to Website</h4></a>
 <!--        <a class="navbar-brand brand-logo-mini" href=""><img src="{%static 'images/logo-mini.svg.url' %}" alt="logo"/></a>-->
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -475,111 +475,111 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <form method="post" action="{% url 'comparto:aboutimg' %}" enctype="multipart/form-data">
+                        <form method="post" action="{% url 'app:mainimg' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.main_img.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file"  name="main_img"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menumainimg' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_mainimg.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_mainimg.url }}" name="menu_mainimg"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menuimg1' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_img1.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_img1.url }}" name="menu_img1"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menuimg2' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_img2.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_img2.url }}" name="menu_img2"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menuimg3' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_img3.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_img3.url }}" name="menu_img3"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menuimg4' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_img4.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_img4.url }}" name="menu_img4"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menuimg5' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_img5.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_img5.url }}" name="menu_img5"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menuimg6' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_img6.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_img6.url }}" name="menu_img6"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menuimg7' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_img7.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_img7.url }}" name="menu_img7"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:menuimg8' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <tr>
+                            <td class="py-1"><img src="{{ i.menu_img8.url }}" style="width:80px;height:80px;"></td>
+                            <td></td><td></td>
+                            <td><input type="file" value="{{ i.menu_img8.url }}" name="menu_img8"></td>
+                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
+                          </tr>
+                        </form>
+                        <form method="post" action="{% url 'app:aboutimg' %}" enctype="multipart/form-data">
                           {% csrf_token %}
                           <tr>
                             <td class="py-1"><img src="{{ i.about_img.url }}" style="width:80px;height:80px;"></td>
                             <td></td><td></td>
-                            <td><input type="file"  name="about_img"></td>
+                            <td><input type="file" value="{{ i.about_img.url }}" name="about_img"></td>
                             <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
                           </tr>
                         </form>
-                        <form method="post" action="{% url 'comparto:serviceimg' %}" enctype="multipart/form-data">
+                        <form method="post" action="{% url 'app:contactimg' %}" enctype="multipart/form-data">
                           {% csrf_token %}
                           <tr>
-                            <td class="py-1"><img src="{{ i.service_img.url }}" style="width:80px;height:80px;"></td>
+                            <td class="py-1"><img src="{{ i.contact_img.url }}" style="width:80px;height:80px;"></td>
                             <td></td><td></td>
-                            <td><input type="file" value="{{ i.service_img.url }}" name="service_img"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg1' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img1.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img1.url }}" name="contact_img1"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg2' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img2.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img2.url }}" name="contact_img2"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg3' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img3.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img3.url }}" name="contact_img3"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg4' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img4.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img4.url }}" name="contact_img4"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg5' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img5.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img5.url }}" name="contact_img5"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg6' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img6.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img6.url }}" name="contact_img6"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg7' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img7.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img7.url }}" name="contact_img7"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg8' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img8.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img8.url }}" name="contact_img8"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg9' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img9.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img9.url }}" name="contact_img9"></td>
-                            <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
-                          </tr>
-                        </form>
-                        <form method="post" action="{% url 'comparto:contactimg10' %}" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <tr>
-                            <td class="py-1"><img src="{{ i.contact_img10.url }}" style="width:80px;height:80px;"></td>
-                            <td></td><td></td>
-                            <td><input type="file" value="{{ i.contact_img10.url }}" name="contact_img10"></td>
+                            <td><input type="file" value="{{ i.contact_img.url }}" name="contact_img"></td>
                             <td></td><td><button type="submit" class="btn btn-info font-weight-bold">add</button></td>
                           </tr>
                         </form>
