@@ -158,7 +158,7 @@ def menuimg8(request):
     
 def aboutimg(request):
     if request.method == 'POST':
-        about_img = request.FILES.get('abou_img')
+        about_img = request.FILES.get('about_img')
         antique_instance = Antique.objects.first()  # You may want to retrieve the specific instance you want to update
         antique_instance.about_img = about_img
         antique_instance.save()
